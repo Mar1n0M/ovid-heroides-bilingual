@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -8,13 +8,14 @@
 </head>
 <body>
     <h1>Ovid's Heroides</h1>
-    <label for='letterSelect'>Select a poem:</label>
-    <select id='letterSelect'>
-        <option value=''>-- Select --</option>
-    </select>
+    <div class="selector-wrapper">
+        <label for='letterSelect'>Select a poem:</label>
+        <select id='letterSelect'>
+            <option value=''>– Select –</option>
+        </select>
+    </div>
     <div id='displayArea'>
     </div>
-
     <script src='script_ovid.js'></script>
 </body>
 </html>
