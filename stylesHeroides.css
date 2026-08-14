@@ -1,0 +1,96 @@
+body {
+    font-family: 'Georgia', serif;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    background: #f9f9f5;
+    color: #222;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    border-bottom: 2px solid #aaa;
+    padding-bottom: 0.5rem;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+select {
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+#displayArea {
+    display: block;
+    margin-top: 1rem;
+}
+
+.aligned-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.aligned-table th {
+    background: #f0f0ea;
+    text-align: left;
+    font-weight: bold;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 2px solid #ccc;
+}
+
+.aligned-table td {
+    vertical-align: top;
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.aligned-table .line-number {
+    width: 3rem;
+    text-align: right;
+    color: #555;
+    font-weight: bold;
+}
+
+.aligned-table .latin-text {
+    width: 45%;
+}
+
+.aligned-table .english-text {
+    width: 45%;
+    font-style: italic;
+    color: #333;
+}
+
+.translation-range {
+    font-weight: bold;
+    font-style: normal;
+    color: #555;
+}
+
+.error {
+    color: #a00;
+    font-weight: bold;
+}
+
+/* Clickable word — now behaves like a normal link */
+.word-clickable {
+    cursor: pointer;
+    border-bottom: 1px dashed #888;
+    transition: background 0.15s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.word-clickable:hover {
+    background: #f0e68c;
+}
