@@ -1,8 +1,8 @@
 body {
     font-family: 'Georgia', serif;
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 1.5rem 3rem;
     background: #f9f9f5;
     color: #222;
 }
@@ -10,7 +10,6 @@ body {
 h1 {
     font-size: 1.8rem;
     text-align: center;
-    border-bottom: 2px solid #aaa;
     padding-bottom: 0.5rem;
 }
 
@@ -51,7 +50,6 @@ select {
 .aligned-table td {
     vertical-align: top;
     padding: 0.45rem 0.75rem;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 .aligned-table .line-number {
