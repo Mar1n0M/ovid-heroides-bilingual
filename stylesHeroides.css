@@ -1,28 +1,38 @@
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', 'Times New Roman', serif;
     max-width: 100%;
     margin: 0;
     padding: 1.5rem 3rem;
-    background: #f9f9f5;
-    color: #222;
+    background: #f3ead7;
+    color: #3f3024;
+    line-height: 1.6;
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 2rem;
     text-align: center;
     padding-bottom: 0.5rem;
+    color: #4a3424;
+    letter-spacing: 0.02em;
 }
 
 label {
     font-weight: bold;
-    margin-right: 10px;
+    margin: 0;
+    color: #4a3424;
 }
 
 select {
+    font-family: 'Georgia', 'Times New Roman', serif;
     font-size: 1rem;
-    padding: 5px 10px;
-    margin-bottom: 1.5rem;
+    padding: 0.45rem 0.7rem;
+    margin: 0;
     cursor: pointer;
+    background: #f8f0df;
+    color: #3f3024;
+    border: 1px solid #9a7655;
+    border-radius: 4px;
 }
 
 #displayArea {
@@ -37,22 +47,24 @@ select {
 }
 
 .aligned-table th {
-    background: #f0f0ea;
+    background: #dfcfb4;
+    color: #4a3424;
     text-align: left;
     font-weight: bold;
     padding: 0.6rem 0.75rem;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #9a7655;
 }
 
 .aligned-table td {
     vertical-align: top;
     padding: 0.45rem 0.75rem;
+    color: #3f3024;
 }
 
 .aligned-table .line-number {
     width: 3rem;
     text-align: right;
-    color: #555;
+    color: #80664d;
     font-weight: bold;
 }
 
@@ -63,30 +75,30 @@ select {
 .aligned-table .english-text {
     width: 45%;
     font-style: italic;
-    color: #333;
+    color: #5c4634;
 }
 
 .translation-range {
     font-weight: bold;
     font-style: normal;
-    color: #555;
+    color: #72563d;
 }
 
 .error {
-    color: #a00;
+    color: #8c2f24;
     font-weight: bold;
 }
 
 .word-clickable {
     cursor: pointer;
-    border-bottom: 1px dashed #888;
+    border-bottom: 1px dashed #9a7655;
     transition: background 0.15s;
     text-decoration: none;
     color: inherit;
 }
 
 .word-clickable:hover {
-    background: #f0e68c;
+    background: #e3d0a8;
 }
 
 .selector-wrapper {
@@ -95,4 +107,9 @@ select {
     align-items: center;
     gap: 0.8rem;
     margin: 1rem 0 2rem 0;
+}
+
+.selector-wrapper label,
+.selector-wrapper select {
+    margin: 0;
 }
