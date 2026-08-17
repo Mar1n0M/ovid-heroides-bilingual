@@ -1,6 +1,6 @@
 body {
     font-family: 'Georgia', 'Times New Roman', serif;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 1.5rem 3rem;
     background: #f3ead7;
@@ -115,7 +115,7 @@ select {
 }
 
 footer {
-    max-width: 900px;
+    max-width: 1400px;
     margin: 4rem auto 0 auto;
     padding: 2rem 1rem 1rem 1rem;
     border-top: 1px solid #9a7655;
