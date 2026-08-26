@@ -7,7 +7,6 @@ body {
     color: #3f3024;
     line-height: 1.6;
 }
-
 h1 {
     font-family: 'Georgia', 'Times New Roman', serif;
     font-size: 2rem;
@@ -16,13 +15,11 @@ h1 {
     color: #4a3424;
     letter-spacing: 0.02em;
 }
-
 label {
     font-weight: bold;
     margin: 0;
     color: #4a3424;
 }
-
 select {
     font-family: 'Georgia', 'Times New Roman', serif;
     font-size: 1rem;
@@ -34,18 +31,15 @@ select {
     border: 1px solid #9a7655;
     border-radius: 4px;
 }
-
 #displayArea {
     display: block;
     margin-top: 1rem;
 }
-
 .aligned-table {
     width: 100%;
     border-collapse: collapse;
     overflow: hidden;
 }
-
 .aligned-table th {
     background: #dfcfb4;
     color: #4a3424;
@@ -54,41 +48,34 @@ select {
     padding: 0.6rem 0.75rem;
     border-bottom: 2px solid #9a7655;
 }
-
 .aligned-table td {
     vertical-align: top;
     padding: 0.45rem 0.75rem;
     color: #3f3024;
 }
-
 .aligned-table .line-number {
     width: 3rem;
     text-align: right;
     color: #80664d;
     font-weight: bold;
 }
-
 .aligned-table .latin-text {
     width: 45%;
 }
-
 .aligned-table .english-text {
     width: 45%;
     font-style: italic;
     color: #5c4634;
 }
-
 .translation-range {
     font-weight: bold;
     font-style: normal;
     color: #72563d;
 }
-
 .error {
     color: #8c2f24;
     font-weight: bold;
 }
-
 .word-clickable {
     cursor: pointer;
     border-bottom: 1px dashed #9a7655;
@@ -96,11 +83,9 @@ select {
     text-decoration: none;
     color: inherit;
 }
-
 .word-clickable:hover {
     background: #e3d0a8;
 }
-
 .selector-wrapper {
     display: flex;
     justify-content: center;
@@ -108,12 +93,10 @@ select {
     gap: 0.8rem;
     margin: 1rem 0 2rem 0;
 }
-
 .selector-wrapper label,
 .selector-wrapper select {
     margin: 0;
 }
-
 footer {
     max-width: 1400px;
     margin: 4rem auto 0 auto;
@@ -123,15 +106,12 @@ footer {
     font-size: 0.85rem;
     color: #80664d;
 }
-
 footer p {
     margin: 0.5rem 0;
 }
-
 footer a {
     color: #72563d;
 }
-
 footer a:hover {
     color: #4a3424;
 }
