@@ -1,29 +1,24 @@
 /* =========================================================
    OVID'S HEROIDES
-   Scholarly archive / early-web / dark-academia aesthetic
+   Heavy archival / early-web / dark academia
    ========================================================= */
 
 :root {
-    --paper: #eee5cf;
+    --paper: #eee5d2;
     --paper-light: #f5efdf;
-    --paper-dark: #ded2b8;
+    --paper-dark: #d8ccb2;
+
     --ink: #29251f;
-    --ink-soft: #51493d;
+    --muted: #63594a;
 
-    --oxblood: #651f24;
-    --oxblood-dark: #481519;
-    --rust: #8b4b3f;
+    --olive: #4b5140;
+    --olive-dark: #353a2e;
 
-    --olive: #525846;
-    --olive-dark: #3c4032;
+    --red: #68252a;
+    --red-dark: #4c191e;
 
-    --rule: #988b72;
-    --rule-dark: #6e624e;
-
-    --link: #62242a;
-    --link-hover: #941f28;
-
-    --shadow: rgba(40, 31, 22, 0.14);
+    --border: #766b58;
+    --border-heavy: #4e473a;
 
     --serif: Georgia, "Times New Roman", Times, serif;
     --sans: Arial, Helvetica, sans-serif;
@@ -32,7 +27,7 @@
 
 
 /* =========================================================
-   GLOBAL
+   PAGE
    ========================================================= */
 
 * {
@@ -40,70 +35,48 @@
 }
 
 html {
-    min-height: 100%;
-    background: #d4c8ad;
+    background: #cec3aa;
 }
 
 body {
-    position: relative;
+    max-width: 1700px;
     min-height: 100vh;
 
-    max-width: 1700px;
     margin: 0 auto;
     padding: 0 3rem 3rem;
 
-    background:
-        linear-gradient(
-            to right,
-            rgba(82, 70, 49, 0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            to bottom,
-            rgba(82, 70, 49, 0.025) 1px,
-            transparent 1px
-        ),
-        var(--paper);
-
-    background-size: 32px 32px;
-
+    background: var(--paper);
     color: var(--ink);
+
     font-family: var(--serif);
-    line-height: 1.6;
+    line-height: 1.55;
 
-    border-left: 1px solid var(--rule);
-    border-right: 1px solid var(--rule);
-
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,0.22) inset,
-        0 0 35px var(--shadow);
+    border-left: 2px solid var(--border-heavy);
+    border-right: 2px solid var(--border-heavy);
 }
 
 
 /* =========================================================
-   TOP ARCHIVAL STRIP
+   ARCHIVAL HEADER STRIP
    ========================================================= */
 
 body::before {
-    content: "DIGITAL EDITION  ·  LATIN TEXT  ·  OVIDIVS";
+    content: "DIGITAL EDITION / OVIDIVS / HEROIDES";
+
     display: block;
 
     margin: 0 -3rem;
 
-    padding: 0.38rem 3rem;
+    padding: 0.42rem 3rem;
 
     background: var(--olive-dark);
-    color: #e8dfca;
+    color: var(--paper);
 
-    border-bottom: 1px solid #272a22;
+    border-bottom: 2px solid var(--border-heavy);
 
     font-family: var(--mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-
-    white-space: nowrap;
-    overflow: hidden;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
 }
 
 
@@ -114,102 +87,73 @@ body::before {
 h1 {
     position: relative;
 
-    margin: 2.1rem 0 1.25rem;
-    padding: 0.75rem 1rem 0.85rem;
+    margin: 2.5rem 0 1.7rem;
+    padding: 0.7rem 0;
 
-    color: var(--oxblood);
+    color: var(--red);
 
     font-family: var(--serif);
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: 2.4rem;
     font-weight: normal;
-    line-height: 1.15;
+    letter-spacing: 0.04em;
     text-align: center;
-
-    letter-spacing: 0.045em;
     text-transform: uppercase;
 
-    border-top: 3px double var(--rule-dark);
-    border-bottom: 3px double var(--rule-dark);
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            rgba(152, 139, 114, 0.15),
-            transparent
-        );
+    border-top: 4px solid var(--border-heavy);
+    border-bottom: 4px solid var(--border-heavy);
 }
 
-/* Angular side marks */
+/*
+   Simple angular marks.
+   Keep these; they carry most of the "old digital archive"
+   character without cluttering the page.
+*/
+
 h1::before,
 h1::after {
     content: "";
+
     position: absolute;
     top: 50%;
 
-    width: 14px;
-    height: 14px;
-
-    border: 1px solid var(--oxblood);
+    width: 12px;
+    height: 12px;
 
     background: var(--paper);
+
+    border: 2px solid var(--red);
+
+    transform: translateY(-50%) rotate(45deg);
 }
 
 h1::before {
-    left: -8px;
-    transform: translateY(-50%) rotate(45deg);
+    left: -7px;
 }
 
 h1::after {
-    right: -8px;
-    transform: translateY(-50%) rotate(45deg);
+    right: -7px;
 }
 
 
 /* =========================================================
-   POEM SELECTOR
+   SELECTOR
    ========================================================= */
 
 .selector-wrapper {
-    position: relative;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
-    gap: 0.8rem;
+    gap: 0.75rem;
 
-    margin: 1.5rem auto 2.4rem;
-    padding: 0.8rem 1.15rem;
+    margin: 1.5rem auto 2rem;
+    padding: 0.7rem 1rem;
 
-    max-width: 600px;
+    max-width: 560px;
 
     background: var(--paper-light);
 
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-
-    box-shadow:
-        4px 4px 0 rgba(82, 70, 49, 0.08);
-}
-
-/* Small archival label */
-.selector-wrapper::before {
-    content: "TEXT SELECTION";
-
-    position: absolute;
-    left: 0.85rem;
-    top: -0.58rem;
-
-    padding: 0 0.4rem;
-
-    background: var(--paper);
-
-    color: var(--olive-dark);
-
-    font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.12em;
+    border: 2px solid var(--border-heavy);
 }
 
 .selector-wrapper label,
@@ -221,27 +165,22 @@ label {
     color: var(--ink);
 
     font-family: var(--sans);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: bold;
+
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 select {
-    min-width: 155px;
+    min-width: 150px;
 
-    padding: 0.48rem 0.65rem;
+    padding: 0.4rem 0.6rem;
 
-    appearance: none;
-
-    background:
-        linear-gradient(45deg, transparent 50%, var(--oxblood) 50%) calc(100% - 13px) 52% / 6px 6px no-repeat,
-        linear-gradient(135deg, var(--oxblood) 50%, transparent 50%) calc(100% - 9px) 52% / 6px 6px no-repeat,
-        var(--paper);
-
+    background: var(--paper);
     color: var(--ink);
 
-    border: 1px solid var(--rule-dark);
+    border: 2px solid var(--border);
 
     border-radius: 0;
 
@@ -251,78 +190,69 @@ select {
     cursor: pointer;
 }
 
-select:hover {
-    background-color: #e9dfc9;
-}
-
 select:focus {
-    outline: 2px solid var(--oxblood);
+    outline: 2px solid var(--red);
     outline-offset: 2px;
 }
 
 
 /* =========================================================
-   DISPLAY AREA
+   DISPLAY
    ========================================================= */
 
 #displayArea {
     display: block;
-
     margin-top: 1rem;
-    padding-top: 0.5rem;
 }
 
 
 /* =========================================================
-   LETTER INFORMATION
+   SENDER / RECIPIENT
    ========================================================= */
 
 #displayArea .letter-info {
-    margin: 0 auto 1.3rem;
+    margin: 0 auto 1.5rem;
 
     max-width: 1000px;
 
-    padding: 0.8rem 1rem;
+    padding: 0.55rem 0.9rem;
 
-    border-left: 4px solid var(--oxblood);
-    border-right: 1px solid var(--rule);
+    background: var(--paper-light);
 
-    background: rgba(245, 239, 223, 0.72);
+    border-left: 5px solid var(--red);
+    border-right: 2px solid var(--border-heavy);
 }
 
 #displayArea .letter-info p {
     margin: 0 !important;
 
-    color: var(--ink-soft) !important;
+    color: var(--muted) !important;
 
     font-family: var(--sans);
-    font-size: 0.74rem !important;
-    letter-spacing: 0.05em;
+    font-size: 0.72rem !important;
 
+    letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
 #displayArea .letter-info strong {
-    color: var(--oxblood);
+    color: var(--red);
 }
 
 
 /* =========================================================
-   TABLE
+   MAIN TABLE
    ========================================================= */
 
 .aligned-table {
     width: 100%;
 
     border-collapse: collapse;
-    border-spacing: 0;
 
-    background: rgba(247, 242, 229, 0.48);
+    background: var(--paper-light);
 
-    border-top: 3px solid var(--olive-dark);
-    border-bottom: 3px solid var(--olive-dark);
-
-    table-layout: fixed;
+    border-top: 5px solid var(--border-heavy);
+    border-bottom: 5px solid var(--border-heavy);
 }
 
 
@@ -339,22 +269,16 @@ select:focus {
 .aligned-table th {
     padding: 0.65rem 0.8rem;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #d8ccb1,
-            #cec09f
-        );
-
+    background: var(--paper-dark);
     color: var(--olive-dark);
 
-    border-right: 1px solid var(--rule);
-    border-bottom: 2px solid var(--rule-dark);
+    border-right: 2px solid var(--border);
+    border-bottom: 4px solid var(--border-heavy);
 
     font-family: var(--sans);
     font-size: 0.68rem;
     font-weight: bold;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 
     text-align: left;
@@ -366,92 +290,107 @@ select:focus {
 
 
 /* =========================================================
-   TABLE CELLS
+   CELLS
    ========================================================= */
+
+/*
+   IMPORTANT:
+   No horizontal rules between every line.
+   The table should read as one continuous scholarly text.
+*/
 
 .aligned-table td {
     vertical-align: top;
 
     padding: 0.62rem 0.8rem;
 
-    color: var(--ink);
+    border: none;
 
-    border-right: 1px solid rgba(110, 98, 78, 0.34);
-    border-bottom: 1px dotted rgba(110, 98, 78, 0.42);
+    color: var(--ink);
 
     font-size: 0.98rem;
 }
 
-.aligned-table td:last-child {
-    border-right: none;
-}
-
 
 /* =========================================================
-   ROWS
-   ========================================================= */
-
-.aligned-table tbody tr:nth-child(even) {
-    background: rgba(222, 210, 184, 0.17);
-}
-
-.aligned-table tbody tr:hover {
-    background: rgba(139, 75, 63, 0.075);
-}
-
-
-/* =========================================================
-   LINE NUMBERS
+   COLUMN STRUCTURE
    ========================================================= */
 
 .aligned-table .line-number {
-    width: 3.7rem;
+    width: 3.5rem;
 
-    padding-right: 0.65rem;
+    padding-right: 0.7rem;
 
     color: var(--olive);
 
     font-family: var(--mono);
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: normal;
 
     text-align: right;
 
-    border-right: 1px solid var(--rule);
+    border-right: 2px solid var(--border);
 }
 
-
-/* =========================================================
-   LATIN
-   ========================================================= */
-
 .aligned-table .latin-text {
-    width: 43%;
+    width: 45%;
 
-    color: #24211c;
+    color: #24211d;
 
     font-size: 1.02rem;
 }
 
-
-/* =========================================================
-   ENGLISH
-   ========================================================= */
-
 .aligned-table .english-text {
-    width: 47%;
+    width: 45%;
 
-    color: #584d3f;
+    padding-left: 1rem;
+
+    color: #5b5042;
 
     font-size: 0.96rem;
     font-style: italic;
 
-    background:
-        linear-gradient(
-            to right,
-            rgba(152, 139, 114, 0.055),
-            transparent
-        );
+    border-left: 2px solid var(--border);
+}
+
+
+/* =========================================================
+   SUBTLE ROW RHYTHM
+   ========================================================= */
+
+/*
+   No line separators.
+   Only a very faint alternating paper tone gives the eye
+   enough structure to follow the bilingual alignment.
+*/
+
+.aligned-table tbody tr:nth-child(even) {
+    background: rgba(216, 204, 178, 0.16);
+}
+
+
+/* =========================================================
+   LATIN WORD LINKS
+   ========================================================= */
+
+.word-clickable {
+    color: inherit;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    border-bottom: 1px dotted var(--red);
+
+    transition:
+        color 0.1s ease,
+        background-color 0.1s ease;
+}
+
+.word-clickable:hover {
+    color: var(--red-dark);
+
+    background: #dfd1b2;
 }
 
 
@@ -462,86 +401,48 @@ select:focus {
 .translation-range {
     display: block;
 
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.15rem;
 
-    color: var(--oxblood);
+    color: var(--red);
 
     font-family: var(--sans);
-    font-size: 0.64rem;
+    font-size: 0.62rem;
     font-style: normal;
     font-weight: bold;
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
 }
 
 
 /* =========================================================
-   CLICKABLE LATIN WORDS
+   ERROR / LOADING
    ========================================================= */
 
-.word-clickable {
-    position: relative;
+.error {
+    max-width: 800px;
 
-    color: inherit;
+    margin: 1.5rem auto;
+    padding: 0.7rem 1rem;
 
-    cursor: pointer;
+    background: #e5d1c9;
 
-    text-decoration: none;
+    color: var(--red-dark);
 
-    border-bottom: 1px dotted var(--rust);
+    border-left: 5px solid var(--red);
 
-    transition:
-        color 0.12s ease,
-        background-color 0.12s ease,
-        border-color 0.12s ease;
+    font-family: var(--mono);
+    font-size: 0.72rem;
 }
-
-.word-clickable:hover {
-    color: var(--oxblood-dark);
-
-    background: #e6d7b7;
-
-    border-bottom: 1px solid var(--oxblood);
-}
-
-.word-clickable:focus {
-    outline: 1px solid var(--oxblood);
-    outline-offset: 2px;
-}
-
-
-/* =========================================================
-   LOADING / ERROR
-   ========================================================= */
 
 #displayArea > p {
     text-align: center;
-}
 
-#displayArea > p:first-child {
-    color: var(--olive);
+    color: var(--muted);
 
     font-family: var(--mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-size: 0.7rem;
     text-transform: uppercase;
-}
-
-.error {
-    margin: 1.5rem auto;
-    padding: 0.8rem 1rem;
-
-    max-width: 800px;
-
-    color: #6d171c;
-
-    background: #ead4ca;
-
-    border-left: 4px solid var(--oxblood);
-
-    font-family: var(--mono);
-    font-size: 0.75rem;
 }
 
 
@@ -555,114 +456,76 @@ footer {
     max-width: 1250px;
 
     margin: 4rem auto 0;
-    padding: 2rem 1.5rem 1rem;
+    padding: 1.5rem 1rem 0.5rem;
 
-    border-top: 3px double var(--rule-dark);
+    color: var(--muted);
 
-    color: var(--olive);
+    border-top: 4px solid var(--border-heavy);
 
     text-align: center;
 
     font-family: var(--sans);
-    font-size: 0.68rem;
-
+    font-size: 0.67rem;
     line-height: 1.7;
-    letter-spacing: 0.025em;
 }
 
-/* Archive-like footer classification */
 footer::before {
-    content: "ARCHIVAL RECORD  ·  ED. MMXXVI";
+    content: "ARCHIVAL RECORD / MMXXVI";
 
     display: block;
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
 
-    color: var(--oxblood);
+    color: var(--red);
 
     font-family: var(--mono);
-    font-size: 0.61rem;
-    letter-spacing: 0.12em;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
 }
 
 footer p {
-    margin: 0.55rem 0;
-}
-
-footer em {
-    font-family: var(--serif);
+    margin: 0.45rem 0;
 }
 
 footer a {
-    color: var(--oxblood);
+    color: var(--red);
 
     text-decoration: none;
 
-    border-bottom: 1px dotted var(--oxblood);
+    border-bottom: 1px dotted var(--red);
 }
 
 footer a:hover {
-    color: var(--link-hover);
-
+    color: var(--red-dark);
     border-bottom-style: solid;
 }
 
 
 /* =========================================================
-   SMALL ORNAMENTAL RULE ABOVE FOOTER
+   SMALL ANGULAR FOOTER MARK
    ========================================================= */
 
 footer::after {
-    content: "◆";
+    content: "";
 
     position: absolute;
-
-    top: -0.72rem;
+    top: -9px;
     left: 50%;
 
-    padding: 0 0.6rem;
-
-    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
 
     background: var(--paper);
 
-    color: var(--oxblood);
+    border: 2px solid var(--red);
 
-    font-size: 0.72rem;
+    transform: translateX(-50%) rotate(45deg);
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE
    ========================================================= */
-
-@media (max-width: 1000px) {
-
-    body {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
-
-    body::before {
-        margin-left: -1.25rem;
-        margin-right: -1.25rem;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
-
-    .aligned-table {
-        table-layout: auto;
-    }
-
-    .aligned-table .latin-text {
-        width: 42%;
-    }
-
-    .aligned-table .english-text {
-        width: 46%;
-    }
-}
-
 
 @media (max-width: 720px) {
 
@@ -676,27 +539,17 @@ footer::after {
 
         padding-left: 0.7rem;
         padding-right: 0.7rem;
-
-        font-size: 0.56rem;
     }
 
     h1 {
-        margin-top: 1.4rem;
+        margin-top: 1.6rem;
 
-        font-size: 1.55rem;
+        font-size: 1.65rem;
     }
 
     .selector-wrapper {
         align-items: stretch;
         flex-direction: column;
-
-        max-width: none;
-
-        padding-top: 1rem;
-    }
-
-    .selector-wrapper::before {
-        top: -0.5rem;
     }
 
     select {
@@ -709,17 +562,6 @@ footer::after {
 
     .aligned-table {
         min-width: 720px;
-    }
-
-    .aligned-table td,
-    .aligned-table th {
-        padding-left: 0.55rem;
-        padding-right: 0.55rem;
-    }
-
-    footer {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
     }
 }
 
@@ -739,9 +581,6 @@ footer::after {
         max-width: none;
 
         border: none;
-        box-shadow: none;
-
-        color: black;
     }
 
     body::before,
@@ -751,23 +590,16 @@ footer::after {
 
     h1 {
         color: black;
-
-        border-color: black;
     }
 
     .aligned-table {
         border-color: black;
+        background: white;
     }
 
     .aligned-table th {
         background: #eee !important;
-
         color: black;
-    }
-
-    .aligned-table td,
-    .aligned-table th {
-        border-color: #999;
     }
 
     .word-clickable {
