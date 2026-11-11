@@ -11,6 +11,7 @@
     --maroon: #663f38;
     --maroon-dark: #4d302c;
     --rule: #99866d;
+    --highlight: #ecdcae;
 }
 * {
     box-sizing: border-box;
@@ -65,6 +66,50 @@ select {
 select:focus {
     outline: none;
     border-bottom-color: var(--maroon);
+}
+.search-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: -0.9rem 0 1.8rem;
+}
+.search-wrapper label {
+    color: var(--brown-dark);
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+#searchInput {
+    min-width: 240px;
+    margin: 0;
+    padding: 0.05rem 0.1rem;
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    border-bottom: 1px solid var(--brown-mid);
+    border-radius: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.92rem;
+}
+#searchInput::placeholder {
+    color: var(--brown-muted);
+    font-style: italic;
+    opacity: 1;
+}
+#searchInput:focus {
+    outline: none;
+    border-bottom-color: var(--maroon);
+}
+.search-status {
+    color: var(--brown-muted);
+    font-size: 0.8rem;
+}
+mark.search-match {
+    padding: 0 0.04em;
+    background: var(--highlight);
+    color: inherit;
+    border-radius: 2px;
 }
 #displayArea {
     display: block;
@@ -128,25 +173,32 @@ select:focus {
     font-size: 1rem;
     line-height: 1.62;
 }
-.aligned-table .english-text {
-    width: 48%;
-    padding-left: 1.5rem;
+.english-translation {
+    max-width: 1250px;
+    margin: 2rem auto 0;
+    padding-top: 1.35rem;
+    border-top: 1px solid var(--rule);
+}
+.translation-heading {
+    margin: 0 0 0.85rem;
+    color: var(--brown-dark);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.075em;
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-align: left;
+}
+.english-paragraph {
+    margin: 0 0 1rem;
     color: var(--brown);
     font-size: 1rem;
-    line-height: 1.7;
     font-style: italic;
+    line-height: 1.7;
 }
-.translation-range {
-    display: block;
-    margin: 0 0 0.18rem;
-    color: var(--maroon-dark);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.65rem;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 0.045em;
-    line-height: 1.2;
-    text-transform: uppercase;
+.english-paragraph:last-child {
+    margin-bottom: 0;
 }
 .word-clickable {
     color: inherit;
@@ -169,6 +221,50 @@ select:focus {
     margin: 2rem auto;
     color: var(--maroon-dark);
     font-weight: bold;
+}
+.back-to-top {
+    position: fixed;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 20;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
+    background: var(--paper-light);
+    color: var(--brown-dark);
+    border: 1px solid var(--brown-mid);
+    border-radius: 50%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(41, 37, 31, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.6rem);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background: var(--brown-dark);
+    color: var(--paper-light);
+    border-color: var(--brown-dark);
+}
+.back-to-top:focus {
+    outline: none;
+}
+.back-to-top:focus-visible {
+    outline: 2px solid var(--maroon-dark);
+    outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+        transition: none;
+    }
 }
 footer {
     max-width: 1250px;
@@ -214,9 +310,6 @@ footer a:hover {
     .aligned-table .latin-text {
         padding-right: 0.8rem;
     }
-    .aligned-table .english-text {
-        padding-left: 0.8rem;
-    }
 }
 @media (max-width: 600px) {
     h1 {
@@ -225,6 +318,13 @@ footer a:hover {
     .selector-wrapper {
         margin-top: 0.9rem;
         margin-bottom: 1.4rem;
+    }
+    .search-wrapper {
+        margin-top: -0.5rem;
+        margin-bottom: 1.4rem;
+    }
+    #searchInput {
+        min-width: 170px;
     }
     .aligned-table {
         font-size: 0.9rem;
@@ -236,9 +336,12 @@ footer a:hover {
         width: 44%;
         padding-right: 0.5rem;
     }
-    .aligned-table .english-text {
-        width: 50%;
-        padding-left: 0.7rem;
+    .back-to-top {
+        left: 0.75rem;
+        bottom: 0.75rem;
+        width: 2.35rem;
+        height: 2.35rem;
+        font-size: 1.05rem;
     }
     footer {
         margin-top: 3rem;
