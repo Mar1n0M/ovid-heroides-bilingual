@@ -18,7 +18,12 @@
             <option value=''>– Select –</option>
         </select>
     </div>
-    <div id='displayArea'></div>
+    <div class='reading-controls' id='readingControls' hidden>
+    <label for='textSearch'>Search this poem (Latin or English):</label>
+    <input type='search' id='textSearch' placeholder='Enter a word or phrase...' autocomplete='off'>
+    <p id='searchStatus' class='search-status' aria-live='polite'></p>
+</div>
+<div id="displayArea"></div>
     <footer>
         <p>Created by Marino Marinović, 2026</p>
         <p>The Latin text: <a href='http://www.m.thelatinlibrary.com/ovid.html' target='_blank'>The Latin Library</a></p>
@@ -30,6 +35,7 @@
         </p>
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a></p>
     </footer>
+    <button id='backToTop' class='back-to-top' type='button' aria-label='Back to top' title='Back to top'>↑</button>
     <script src='script_ovid.js'></script>
 </body>
 </html>
